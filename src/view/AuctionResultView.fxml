@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400" prefWidth="830" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AuctionResultController">
+
+    <children>
+        <!-- background -->
+        <ImageView fitHeight="430" fitWidth="830" preserveRatio="false">
+            <image>
+                <Image url="@../image/拍卖场背景.png" />
+            </image>
+        </ImageView>
+
+        <!-- title -->
+        <Label layoutX="250" layoutY="10" text="🏆 AUCTION RESULTS" style="-fx-text-fill: gold; -fx-font-size: 30px; -fx-font-weight: bold;" />
+
+        <!-- result list -->
+        <ListView fx:id="resultList" layoutX="30" layoutY="60" prefWidth="740" prefHeight="240" />
+
+        <!-- Bottom conclusion area -->
+        <VBox alignment="CENTER" spacing="10" layoutX="200" layoutY="320">
+            <Label fx:id="totalIncomeLabel" style="-fx-text-fill: #f1c40f; -fx-font-size: 22px; -fx-font-weight: bold;" text="Total Income: 0" />
+            <Button onAction="#handleFinish" style="-fx-background-color: #2ecc71; -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 6 30;" text="Finish Auction" />
+        </VBox>
+    </children>
+</AnchorPane>

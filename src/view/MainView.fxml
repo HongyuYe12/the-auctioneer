@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.effect.DropShadow?>
+
+<AnchorPane prefHeight="480" prefWidth="830" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController" stylesheets="@../style.css">
+
+    <children>
+
+        <!-- ====== Global background ====== -->
+        <ImageView fitHeight="480" fitWidth="830" preserveRatio="false">
+            <image>
+                <Image url="@../image/main.png" />
+            </image>
+        </ImageView>
+
+        <!-- Today's date indicator -->
+        <Circle fx:id="todayCircle"
+                visible="false"
+                radius="10"
+                fill="transparent"
+                stroke="#7A0019"
+                strokeWidth="3.5"
+                opacity="0.95">
+
+            <effect>
+                <DropShadow color="#B22222"
+                            radius="8"
+                            spread="0.35"/>
+            </effect>
+
+        </Circle>
+
+        <!-- Days until auction -->
+        <Label fx:id="auctionCountdownLabel"
+               layoutX="590"
+               layoutY="100"
+               text="6"
+               style="-fx-font-size:18px;
+                      -fx-font-family:'Times New Roman';
+                      -fx-font-weight:bold;
+                      -fx-text-fill:#4A2A12;"/>
+
+        <!-- ====== Top status bar ====== -->
+        <StackPane layoutX="0.0" layoutY="0.0" prefHeight="60.0" prefWidth="830.0">
+
+            <ImageView fitHeight="60.0" fitWidth="830.0" preserveRatio="false">
+                <image>
+                    <Image url="@../image/上任务栏背景2.png" />
+                </image>
+            </ImageView>
+
+            <HBox fx:id="statusBar" prefHeight="60.0" prefWidth="830.0" style="-fx-padding: 10 20 10 20; -fx-spacing: 25; -fx-alignment: center-left; -fx-background-color: transparent;">
+
+                <HBox alignment="center_left" spacing="5">
+   
+                    <Label fx:id="dayLabel" prefHeight="22.0" prefWidth="60.0" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: transparent;" text="Day 1" />
+                    <ImageView fitHeight="23.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true" />
+                    <ImageView fitHeight="22.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../image/heart.png" />
+                        </image>
+                    </ImageView>
+                    <Label fx:id="energyLabel" prefHeight="22.0" prefWidth="130.0" style="-fx-text-fill: #2ecc71; -fx-font-size: 16px; -fx-background-color: transparent;" text="100/100" />
+                </HBox>
+
+                <HBox alignment="center_left" spacing="5">
+                    <ImageView fitHeight="97.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../image/金币.png" />
+                        </image>
+                    </ImageView>
+                    <Label fx:id="goldLabel" prefHeight="22.0" prefWidth="190.0" style="-fx-text-fill: #f1c40f; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: transparent;" text="1115,000" />
+               
+
+                    <Label fx:id="levelLabel" prefHeight="22.0" prefWidth="60.0" style="-fx-text-fill: #e67e22; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: transparent;" text="Lv.1" />
+                    <Label fx:id="locationLabel" text="The Auction" textFill="#ffefe3">
+                        <font>
+                            <Font name="Century" size="19.0" />
+                        </font>
+                    </Label>
+                </HBox>
+            </HBox>
+        </StackPane>
+
+        <!-- ====== Middle content area ====== -->
+        <StackPane fx:id="contentArea" layoutY="54.0" prefHeight="400.0" prefWidth="830.0" />
+        
+        <!-- ====== Bottom button area ====== -->
+        <StackPane fx:id="bottomNavBar" layoutX="0" layoutY="412.0" prefHeight="60.0" prefWidth="830">
+
+            <ImageView fitHeight="68.0" fitWidth="830.0" preserveRatio="false">
+                <image>
+                    <Image url="@../image/下任务栏背景.png" />
+                </image>
+            </ImageView>
+                   
+                   
+                <HBox prefHeight="60.0" prefWidth="830.0" style="-fx-alignment: center; -fx-spacing: 20; -fx-padding: 0 20 0 20; -fx-background-color: transparent;">
+   
+                    <Button fx:id="introduceBtn" styleClass="nav-button" onAction="#goToIntroduce" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="50" fitWidth="50" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/介绍.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="mapBtn" styleClass="nav-button" onAction="#goToMap" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="52.0" fitWidth="57.0" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/地图.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+   
+                    <Button fx:id="shopBtn" styleClass="nav-button" onAction="#goToShop" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="54.0" fitWidth="60.0" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/商店.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+   
+                 
+                    <Button fx:id="inventoryBtn" styleClass="nav-button" onAction="#goToInventory" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="60.0" fitWidth="49.0" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/包.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                
+                    <Button fx:id="endDayBtn" styleClass="nav-button" onAction="#handleEndDay" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;">
+                        <graphic>
+                            <ImageView fitHeight="48" fitWidth="48" preserveRatio="true">
+                                <image>
+                                    <Image url="@../image/下一天.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+   
+                </HBox>
+
+        </StackPane>
+
+        <!-- Overlay caption (initially hidden) -->
+        <Label fx:id="overlayLabel" 
+               layoutX="0" layoutY="0.0" 
+               prefWidth="830.0" prefHeight="480.0" 
+               alignment="CENTER" 
+               style="-fx-font-size: 64px; -fx-font-weight: bold; -fx-text-fill: #FFD700; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.9), 25, 0, 0, 0); -fx-background-color: rgba(0,0,0,0.6); -fx-background-radius: 0;" 
+               visible="false" 
+               text="Day 1" 
+               mouseTransparent="false" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400" prefWidth="830" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShopController">
+
+    <children>
+
+        <!-- Background (fills content area) -->
+        <ImageView fitHeight="400" fitWidth="830" preserveRatio="false">
+            <image>
+                <Image url="@../image/商店背景.png" />
+            </image>
+        </ImageView>
+     
+
+        <!-- ====== Back button (top-left of the content area) ====== -->
+        <Button  layoutX="20.0" layoutY="20.0" onAction="#handleBack" style="-fx-background-color: rgba(0,0,0,0.5); -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8; -fx-cursor: hand;" text="← Back" />
+
+        <!-- ====== Steak ====== -->
+        <StackPane layoutX="77.0" layoutY="75.0" prefHeight="250.0" prefWidth="200.0">
+            <ImageView fitHeight="250.0" fitWidth="200.0" preserveRatio="false">
+                <image>
+                    <Image url="@../image/商店界面.png" />
+                </image>
+            </ImageView>
+            <VBox fx:id="steakCard" alignment="center" spacing="8" style="-fx-padding: 0; -fx-background-radius: 12;">
+                <ImageView fitHeight="53.0" fitWidth="59.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/牛排（可选）.png" />
+                    </image>
+                </ImageView>
+                <Label style="-fx-font-weight: bold;" text="Steak" textFill="#a86111">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+                <VBox alignment="center" spacing="2">
+                    <Label text="Restore 50 Energy" />
+                    <Label text="Price: 6,000 coins" textFill="#b78181" />
+                </VBox>
+                <Label fx:id="steakRemain" style="-fx-text-fill: #2ecc71;" text="Remaining 1/1" />
+                <Button fx:id="steakBtn" styleClass="nav-button" onAction="#handleBuySteak" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 6; -fx-cursor: hand;" text="Buy" />
+            </VBox>
+        </StackPane>
+
+        <!-- ====== Milk ====== -->
+        <StackPane layoutX="315.0" layoutY="75.0" prefHeight="250.0" prefWidth="200.0">
+            <ImageView fitHeight="250.0" fitWidth="200.0" preserveRatio="false">
+                <image>
+                    <Image url="@../image/商店界面.png" />
+                </image>
+            </ImageView>
+            <VBox fx:id="milkCard" alignment="center" spacing="8" style="-fx-padding: 0; -fx-background-radius: 12;">
+                <ImageView fitHeight="50" fitWidth="50" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/牛奶2.png" />
+                    </image>
+                </ImageView>
+            <Label style="-fx-font-weight: bold;" text="MILK" textFill="#5c2b2b">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+                <VBox alignment="center" spacing="2">
+                    <Label text="Restore 30 Energy" />
+                    <Label text="Price: 3,000 coins" textFill="#b57d7d" />
+                </VBox>
+                <Label fx:id="milkRemain" style="-fx-text-fill: #2ecc71;" text="Remaining 2/2" />
+                <Button fx:id="milkBtn" styleClass="nav-button" onAction="#handleBuyMilk" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 6; -fx-cursor: hand;" text="Buy" />
+            </VBox>
+        </StackPane>
+
+        <!-- ====== Water-Repelling Pearl ====== -->
+        <StackPane layoutX="548.0" layoutY="75.0" prefHeight="250.0" prefWidth="200.0">
+            <ImageView fitHeight="250.0" fitWidth="200.0" preserveRatio="false">
+                <image>
+                    <Image url="@../image/商店界面.png" />
+                </image>
+            </ImageView>
+            <VBox fx:id="pearlCard" alignment="center" spacing="8" style="-fx-padding: 0; -fx-background-radius: 12;">
+                <ImageView fitHeight="49.0" fitWidth="63.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/避水珠.png" />
+                    </image>
+                </ImageView>
+                <VBox alignment="center" spacing="2">
+                    <Label prefHeight="42.0" prefWidth="159.0" style="-fx-font-weight: bold;" text="Water-Repelling Pearl" textAlignment="CENTER" textFill="#3550a1" wrapText="true">
+                  <font>
+                     <Font size="15.0" />
+                  </font></Label>
+                    <Label prefHeight="15.0" prefWidth="122.0" text="Unlock Atlantis Ruins" textFill="#744e4e" />
+                    <Label text="Price: 30,000 coins" textFill="#be8080" />
+                </VBox>
+                <Label fx:id="pearlRemain" style="-fx-text-fill: #2ecc71;" text="Stock: 1" />
+                <Button fx:id="pearlBtn" styleClass="nav-button" onAction="#handleBuyPearl" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 6; -fx-cursor: hand;" text="Buy" />
+            </VBox>
+        </StackPane>
+
+    </children>
+</AnchorPane>

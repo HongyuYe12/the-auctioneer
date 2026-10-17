@@ -1,0 +1,22 @@
+/* ============================================
+   1. 底部导航按钮悬停缩放 + 阴影
+   ============================================ */
+.nav-button:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-effect: dropshadow(gaussian, rgba(255,215,0,0.6), 15, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+/* ============================================
+   2. 自定义 Tooltip 样式（让名称更醒目）
+   ============================================ */
+.tooltip {
+    -fx-font-size: 16px;                /* 字号加大 */
+    -fx-font-weight: bold;              /* 加粗 */
+    -fx-text-fill: #f1c40f;             /* 金色文字 */
+    -fx-background-color: rgba(0, 0, 0, 0.85); /* 深色半透明背景 */
+    -fx-padding: 8 18 8 18;             /* 内边距 */
+    -fx-background-radius: 12;          /* 圆角 */
+    -fx-effect: dropshadow(gaussian, rgba(255,215,0,0.5), 12, 0, 0, 0); /* 金色发光 */
+}

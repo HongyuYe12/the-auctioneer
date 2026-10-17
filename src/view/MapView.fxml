@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400" prefWidth="830" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MapController">
+
+    <children>
+
+        <!-- ====== Map background ====== -->
+        <ImageView fitHeight="480" fitWidth="830" preserveRatio="false">
+            <image>
+                <Image url="@../image/MapBackground.png" />
+            </image>
+        </ImageView>
+      
+        
+        <!-- ====== Back button ====== -->
+        <Button layoutX="25.0" layoutY="27.0" onAction="#handleBack" style="-fx-background-color: rgba(0,0,0,0.5); -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8; -fx-cursor: hand;" text="← Back" />
+        
+        <!-- ====== Pool 1: Abandoned Farm Cellar ====== -->
+        <StackPane layoutX="51.0" layoutY="70.0" prefHeight="280.0" prefWidth="200.0">
+            <ImageView fitHeight="280.0" fitWidth="200.0" preserveRatio="false">
+                <image>
+                    <Image url="@../image/窗口背景2.png" />
+                </image>
+            </ImageView>
+            <VBox fx:id="pool1Card" alignment="center" layoutX="30.0" layoutY="80.0" prefHeight="280" prefWidth="200" spacing="8" style="-fx-padding: 0; -fx-background-radius: 12;">
+                <ImageView fitHeight="79.0" fitWidth="133.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/废弃农舍.png" />
+                    </image>
+                </ImageView>
+                <Label text="OLD_CELLAR" wrapText="true">
+                    <font>
+                        <Font name="Century" size="22.0" />
+                    </font>
+                    <textFill>
+                        <RadialGradient centerX="0.49630997717600467" centerY="0.3548895658378721" radius="0.5">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.359649121761322" green="0.23865605890750885" blue="0.23865605890750885" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </RadialGradient>
+                    </textFill>
+                </Label>
+                <Label fx:id="pool1Status" style="-fx-text-fill: #2ecc71;" text="unlocked" />
+                <Button fx:id="pool1Btn" onAction="#goToPool1" style="-fx-background-color: #f1c40f; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 6;" styleClass="nav-button" text="Draw 200" />
+            </VBox>
+        </StackPane>
+
+        <!-- ====== Pool 2: Black Market Smuggling Ship ====== -->
+        <StackPane layoutX="315.0" layoutY="55.0" prefHeight="280.0" prefWidth="200.0">
+            <ImageView fitHeight="280.0" fitWidth="200.0" preserveRatio="false">
+                <image>
+                    <Image url="@../image/窗口背景2.png" />
+                </image>
+            </ImageView>
+            <VBox fx:id="pool2Card" alignment="center" layoutX="310.0" layoutY="80.0" prefHeight="280" prefWidth="200" spacing="8" style="-fx-padding: 0; -fx-background-radius: 12;">
+                <ImageView fitHeight="72.0" fitWidth="131.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/走私货船.png" />
+                    </image>
+                </ImageView>
+                <Label text="BLACK_MARKET SHIP" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="Century" size="18.0" />
+                    </font>
+                    <textFill>
+                        <RadialGradient centerX="0.49630997717600467" centerY="0.3548895658378721" radius="0.5">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.359649121761322" green="0.23865605890750885" blue="0.23865605890750885" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </RadialGradient>
+                    </textFill>
+                </Label>
+                <Label fx:id="pool2Status" text="locked" textFill="#f8b5b5" />
+                <Button fx:id="pool2Btn" disable="true" onAction="#goToPool2" style="-fx-background-color: #7f8c8d; -fx-font-size: 14px; -fx-background-radius: 6;" styleClass="nav-button" text="Draw 1500" />
+            </VBox>
+        </StackPane>
+
+        <!-- ====== Pool 3: Atlantis Deep Sea Ruins ====== -->
+        <StackPane layoutX="573.0" layoutY="70.0" prefHeight="224.0" prefWidth="166.0">
+            <ImageView fitHeight="280.0" fitWidth="200.0" preserveRatio="false">
+                <image>
+                    <Image url="@../image/窗口背景2.png" />
+                </image>
+            </ImageView>
+            <VBox fx:id="pool3Card" alignment="center" layoutX="590.0" layoutY="80.0" prefHeight="280" prefWidth="200" spacing="8" style="-fx-padding: 0; -fx-background-radius: 12;">
+                <ImageView fitHeight="70.0" fitWidth="192.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/深海遗迹.png" />
+                    </image>
+                </ImageView>
+                <Label prefHeight="56.0" prefWidth="157.0" text="ATLANTIS_RUINS">
+                    <font>
+                        <Font name="Century" size="17.0" />
+                    </font>
+                    <textFill>
+                        <RadialGradient centerX="0.49630997717600467" centerY="0.3548895658378721" radius="0.5">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.359649121761322" green="0.23865605890750885" blue="0.23865605890750885" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </RadialGradient>
+                    </textFill>
+                </Label>
+                <Label fx:id="pool3Status" text="locked" textFill="#f8b5b5" />
+                <Button fx:id="pool3Btn" disable="true" onAction="#goToPool3" style="-fx-background-color: #7f8c8d; -fx-font-size: 14px; -fx-background-radius: 6;" styleClass="nav-button" text="Draw 10000" />
+            </VBox>
+        </StackPane>
+
+    </children>
+</AnchorPane>
+

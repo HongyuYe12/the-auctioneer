@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400" prefWidth="830" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AuctionPrepController">
+
+    <children>
+        <!-- ====== Background ====== -->
+        <ImageView fitHeight="430" fitWidth="830" preserveRatio="false">
+            <image>
+                <Image url="@../image/拍卖场背景.png" />
+            </image>
+        </ImageView>
+
+              <!-- ====== Title / Instruction ====== -->
+        <Label layoutX="100" layoutY="10" text="Tip: Select items on the left → Click 'Add' → Confirm on the right → Start the auction" textFill="gold">
+            <font>
+                <Font name="Century" size="16" />
+            </font>
+        </Label>
+
+        <!-- ====== Main layout (left and right columns) ====== -->
+        <HBox layoutX="30" layoutY="50" prefHeight="220" prefWidth="770" spacing="50">
+            <!-- Left column: Available artifacts -->
+            <VBox prefWidth="360" spacing="8">
+                <Label style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="📦 Your Identified Artifacts" />
+                <ListView fx:id="availableList" prefHeight="180" />
+                <Button onAction="#addSelected" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 6;" text="Add Selected →" />
+            </VBox>
+
+            <!-- Right column: Selected auction slots -->
+            <VBox prefWidth="360" spacing="8">
+                <Label style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="🔨 Auction Slots" />
+                <ListView fx:id="selectedList" prefHeight="180" />
+                <Button onAction="#removeSelected" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 6;" text="← Remove Selected" />
+            </VBox>
+        </HBox>
+	<Button fx:id="backBtn" layoutX="30.0" layoutY="298.0" onAction="#handleBack" style="-fx-text-fill: white; -fx-background-color: #667d91; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 8 20;" text="← Back" textFill="#667d91" />
+    <Button fx:id="skipBtn" layoutX="30.0" layoutY="361.0" onAction="#handleSkip" style="-fx-background-color: #cc7575; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 8 20;" text="⏭ Skip Auction" textFill="#cc7575" />
+        <!-- ====== Bottom action area ====== -->
+        <HBox alignment="CENTER" layoutX="229.0" layoutY="314.0" prefWidth="430" spacing="30">
+            <Label fx:id="countLabel" style="-fx-text-fill: #f1c40f; -fx-font-size: 20px; -fx-font-weight: bold;" text="Selected 0 / 3" />
+            <Button fx:id="startBtn" onAction="#handleStartAuction" style="-fx-background-color: #f1c40f; -fx-font-size: 20px; -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 8 30; -fx-effect: dropshadow(gaussian, rgba(255,215,0,0.6), 15, 0, 0, 0);" text="🚀 Start Auction" />
+        </HBox>
+
+    </children>
+</AnchorPane>
+

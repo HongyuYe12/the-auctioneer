@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="608.0" prefWidth="810.0" 
+            xmlns="http://javafx.com/javafx/21" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="controller.StartController"
+            stylesheets="@../style.css">
+
+    <children>
+        <ImageView fitHeight="608.0" fitWidth="810.0" preserveRatio="false">
+            <image>
+                <Image url="@../image/enter.png" />
+            </image>
+        </ImageView>
+
+        <Button fx:id="startBtn" 
+                layoutX="329" layoutY="325" 
+                prefHeight="81" prefWidth="152" 
+                styleClass="nav-button" 
+                onAction="#handleStart" 
+                style="-fx-background-color: transparent; -fx-cursor: hand;">
+            <graphic>
+                <ImageView fitHeight="81" fitWidth="152" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/start.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </children>
+</AnchorPane>
